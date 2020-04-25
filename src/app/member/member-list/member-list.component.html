@@ -1,0 +1,42 @@
+
+ <table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>BodyFat</th>
+      <th>IC</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    
+    <tbody *ngIf="memberList">
+
+    <tr *ngFor="let memberdetail of memberList">
+      <td (click)="populateForm(memberdetail)">{{memberdetail.Name}}</td>
+      <td (click)="populateForm(memberdetail)">{{memberdetail.Age}}</td>
+      <td (click)="populateForm(memberdetail)">{{memberdetail.Weight}}</td>
+      <td (click)="populateForm(memberdetail)">{{memberdetail.Height}}</td>
+      <td (click)="populateForm(memberdetail)">{{memberdetail.BodyFat}}</td>
+      <td (click)="populateForm(memberdetail)">{{memberdetail.IC}}</td>
+      <td>
+        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(memberdetail.Id)"></i>
+      </td>
+    </tr>
+
+  </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]= "collectionSize" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
+  </div>
+

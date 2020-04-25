@@ -1,0 +1,36 @@
+
+.header{
+    margin:20px;
+    justify-content: center;
+}
+
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;  
+    margin:20px; 
+    align-items: top;
+}
+
+.flex-container > div{
+    border-radius: 10px;
+    background-color: #f4f7f8;
+    padding: 10px;
+    margin:10px;
+    flex-grow: 2;
+}
+
+.table 
+td,
+th {
+    text-align: center;
+    cursor: pointer;   
+ }
+
+ input.ng-valid{
+     border-color:#28a745
+ }
+
+ input.ng-touched.ng-invalid{
+    border-color:#dc3545
+ }
